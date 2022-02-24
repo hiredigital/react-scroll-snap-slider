@@ -16,12 +16,14 @@ import { StyledCarousel, StyledSlider, StyledUl } from './Carousel.styled'
 export interface CarouselRef {
   scrollToSlide: Function
   sliderRef: React.Ref<HTMLDivElement>
+  manualScroll: Function
 }
 
 export const Carousel = forwardRef(
   (
     {
       renderCustomArrow,
+      disableArrow,
       slidesPerPageSettings,
       slideWidth,
       onScrollStart,
@@ -161,6 +163,7 @@ export const Carousel = forwardRef(
     useImperativeHandle(ref, () => ({
       scrollToSlide,
       sliderRef,
+      manualScroll,
     }))
 
     useEffect(() => {
@@ -215,32 +218,36 @@ export const Carousel = forwardRef(
 
     return (
       <StyledCarousel>
-        {renderCustomArrow ? (
-          <React.Fragment>
-            {renderCustomArrow({
-              direction: 'prev',
-              ref: arrowPrevRef,
-              onClick: manualScroll,
-            })}
-            {renderCustomArrow({
-              direction: 'next',
-              ref: arrowNextRef,
-              onClick: manualScroll,
-            })}
-          </React.Fragment>
+        {!disableArrow ? (
+          renderCustomArrow ? (
+            <React.Fragment>
+              {renderCustomArrow({
+                direction: 'prev',
+                ref: arrowPrevRef,
+                onClick: manualScroll,
+              })}
+              {renderCustomArrow({
+                direction: 'next',
+                ref: arrowNextRef,
+                onClick: manualScroll,
+              })}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <NavArrow
+                ref={arrowPrevRef}
+                direction={'prev'}
+                onClick={() => manualScroll('prev')}
+              />
+              <NavArrow
+                ref={arrowNextRef}
+                direction={'next'}
+                onClick={() => manualScroll('next')}
+              />
+            </React.Fragment>
+          )
         ) : (
-          <React.Fragment>
-            <NavArrow
-              ref={arrowPrevRef}
-              direction={'prev'}
-              onClick={() => manualScroll('prev')}
-            />
-            <NavArrow
-              ref={arrowNextRef}
-              direction={'next'}
-              onClick={() => manualScroll('next')}
-            />
-          </React.Fragment>
+          ''
         )}
 
         <StyledSlider onScroll={onSliderScroll} ref={sliderRef} tabIndex={0}>

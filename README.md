@@ -1,5 +1,6 @@
 # react-scroll-snap-slider
-A React Slider / Carousel Component with Scroll Snapping and Intersection Observer. ***[Demo](https://lifarl.github.io/react-scroll-snap-slider/)***
+
+A React Slider / Carousel Component with Scroll Snapping and Intersection Observer. **_[Demo](https://lifarl.github.io/react-scroll-snap-slider/)_**
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@lifarl/react-scroll-snap-slider)
 [![npm version](https://badge.fury.io/js/%40lifarl%2Freact-scroll-snap-slider.svg)](https://badge.fury.io/js/%40lifarl%2Freact-scroll-snap-slider)
@@ -17,12 +18,9 @@ yarn add @lifarl/react-scroll-snap-slider
 
 ## Usage
 
-
 ```tsx
-
-import { Slider } from '@lifarl/react-scroll-snap-slider';
-
-<Slider>
+import { Slider } from '@lifarl/react-scroll-snap-slider'
+;<Slider>
   <div>Foo</div>
   <div>Bar</div>
   <div>Baz</div>
@@ -35,7 +33,7 @@ See also examples in `App.tsx`
 
 Firing tracking events on css based sliders can be done with the intersection observer. Pass `onSlideVisible` to the Carousel and it will fire when a slide enters the viewport without triggering a rerender.
 
-## Props  
+## Props
 
 ```typescript
 onSlideVisible?: (index: number) => void // Callback that is triggered when a slide gets visible by a threshold of 0.5
@@ -49,6 +47,9 @@ slideWidth?: number // optionally for setting a fixed slide width
 onScrollStart?: () => void // callback that triggers at the beginning of the scroll event
 onScrollEnd?: (index: number) => void // callback that triggers at the end of the scroll event
 children: React.ReactNode // put your slides here :)
+onSlidesVisibilityChange: (index: number) => void // callback when a slides visibility changes
+ref: React.Ref // exposes three imperative handles: scrollToSlide, sliderRef, manualScroll
+disableArrow: boolean // Disable arrows entirely
 ```
 
 ## Browser Support

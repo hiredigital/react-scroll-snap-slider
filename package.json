@@ -1,6 +1,6 @@
 {
-  "name": "@lifarl/react-scroll-snap-slider",
-  "version": "2.0.5",
+  "name": "@contentco/react-scroll-snap-slider",
+  "version": "2.0.9",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -8,15 +8,15 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "rm -rf ./dist && rollup -c",
-    "build:pages": "rm -rf ./dist && parcel build index.html --public-url https://lifarl.github.io/react-scroll-snap-slider/",
+    "build:pages": "rm -rf ./dist && parcel build index.html --public-url https://hiredigital.github.io/react-scroll-snap-slider/",
     "deploy:pages": "gh-pages -d dist",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifarl/react-scroll-snap-slider.git"
+    "url": "https://github.com/hiredigital/react-scroll-snap-slider.git"
   },
-  "homepage": "https://lifarl.github.io/react-scroll-snap-slider",
+  "homepage": "https://hiredigital.github.io/react-scroll-snap-slider",
   "keywords": [
     "react",
     "carousel",
@@ -25,7 +25,7 @@
     "scroll",
     "slider"
   ],
-  "author": "lifarl",
+  "author": "hiredigital",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

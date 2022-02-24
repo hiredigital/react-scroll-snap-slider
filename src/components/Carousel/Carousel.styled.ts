@@ -16,7 +16,7 @@ export const StyledSlider = styled.div`
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: scroll;
   width: 100%;
 `
 
