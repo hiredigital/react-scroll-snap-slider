@@ -1,6 +1,6 @@
 {
   "name": "@contentco/react-scroll-snap-slider",
-  "version": "2.10.2",
+  "version": "2.10.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -10,7 +10,8 @@
     "build": "rm -rf ./dist && rollup -c",
     "build:pages": "rm -rf ./dist && parcel build index.html --public-url https://hiredigital.github.io/react-scroll-snap-slider/",
     "deploy:pages": "gh-pages -d dist",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
