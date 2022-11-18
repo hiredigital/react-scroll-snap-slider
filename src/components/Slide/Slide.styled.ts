@@ -19,12 +19,11 @@ export const StyledSlide = styled.li<StyledSlideProps>`
 
   /* TODO: Use a better targeting method than aria-hidden attribute. */
 
-  [aria-hidden='true'] {
-    height: 200px; /* minimum 1px. it can't be 0, the slider won't work. */
-  }
+  &[aria-hidden='true'] {
+    /* minimum 1px. it can't be 0, the slider won't work. */
+    height: 200px;
 
-  @media only screen and (max-width: 599px) {
-    [aria-hidden='true'] {
+    @media only screen and (max-width: 599px) {
       height: 300px;
     }
   }
